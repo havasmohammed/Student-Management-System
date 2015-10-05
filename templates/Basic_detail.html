@@ -1,0 +1,8 @@
+<body bgcolor="white", text="red">
+<h1>{{ BASIC DETAILS }}</h1>
+
+<form method='POST' action''>{% csrf_token %}
+{{ form.as_p }}
+<br>
+<input type="button" name="b1" value="Submit" onclick="location.href='/sms/Basic_detail/'">
+</form>
