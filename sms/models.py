@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class Login_page(models.Model):
+    sid = models.IntegerField()
+    password = models.CharField(max_length=100)
+
+
 class Basic_detail(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)

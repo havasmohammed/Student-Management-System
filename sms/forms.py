@@ -1,6 +1,12 @@
 from django import forms
 
-from .models import Basic_detail, Course_detail
+from .models import Basic_detail, Course_detail, Login_page
+
+
+class Login_pageForm(forms.ModelForm):
+    class Meta:
+        model = Login_page
+        fields = ['sid', 'password']
 
 
 class Basic_detailForm(forms.ModelForm):
