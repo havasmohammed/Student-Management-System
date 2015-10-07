@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 from .forms import Login_pageForm, Basic_detailForm, Course_detailForm
+
+
+def index(request):
+    return HttpResponse("Student Information System")
 
 
 def loginpage(request):
