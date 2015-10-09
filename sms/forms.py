@@ -19,4 +19,4 @@ class Basic_detailForm(forms.ModelForm):
 class Course_detailForm(forms.ModelForm):
     class Meta:
         model = Course_detail
-        fields = ['cnum', 'cname', 'credits', 'year_of_registration']
+        fields = ['cnum', 'cname', 'stream', 'credits', 'year_of_registration']

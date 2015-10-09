@@ -52,5 +52,17 @@ class Basic_detail(models.Model):
 class Course_detail(models.Model):
     cnum = models.CharField(max_length=9)
     cname = models.CharField(max_length=50)
+    stream = models.CharField(max_length=50, default="")
     credits = models.IntegerField()
     year_of_registration = models.BigIntegerField()
+
+
+class Academic_detail(models.Model):
+    Attendence_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    cname = models.CharField(max_length=50, default=''),
+    First_year_percentage_of_marks = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    Second_year_percentage_of_marks = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    Third_year_percentage_of_marks = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    Fourth_year_percentage_of_marks = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    Total_percentage_of_marks = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    Class_awarded = models.CharField(max_length=50, default="")
