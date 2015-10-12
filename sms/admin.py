@@ -14,8 +14,15 @@ admin.site.register(Login_page, Login_pageAdmin)
 
 
 class Basic_detailAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'sid', 'gender', 'address', 'DOB',
-                    'father_name', 'mother_name', 'email')
+    list_display = ('first_name',
+                    'last_name',
+                    'sid',
+                    'gender',
+                    'address',
+                    'DOB',
+                    'father_name',
+                    'mother_name',
+                    'email')
     form = Basic_detailForm
 
     class Meta:
@@ -24,7 +31,11 @@ admin.site.register(Basic_detail, Basic_detailAdmin)
 
 
 class Course_detailAdmin(admin.ModelAdmin):
-    list_display = ('cnum', 'cname', 'stream', 'credits', 'year_of_registration')
+    list_display = ('cnum',
+                    'cname',
+                    'stream',
+                    'credits',
+                    'year_of_registration')
     form = Course_detailForm
 
     class Meta:
