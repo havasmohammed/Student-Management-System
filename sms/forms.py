@@ -21,7 +21,7 @@ class Basic_detailForm(forms.ModelForm):
 class Course_detailForm(forms.ModelForm):
     class Meta:
         model = Course_detail
-        fields = ['cname', 'stream','code', 'year_of_registration', 'duration', 'level']
+        fields = ['cname', 'stream', 'code', 'year_of_registration', 'duration', 'level']
 
 
 class Academic_detailForm(forms.ModelForm):
@@ -40,5 +40,5 @@ class Academic_detailForm(forms.ModelForm):
 class Miscellaneous_detailForm(forms.ModelForm):
     class Meta:
         model = Miscellaneous_detail
-        fields = ['nss', 'ncc','sports', 'hobbies', 'personal_website', 'orkut_profile_url',
+        fields = ['nss', 'ncc', 'sports', 'hobbies', 'personal_website', 'orkut_profile_url',
                   'facebook_profile_url', 'linkedin_profile_url']

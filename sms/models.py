@@ -1,9 +1,9 @@
 from django.db import models
 from builtins import str
 # from managers import ProfileManager
-from django.conf import settings
-from django.contrib.auth.models import User
-from django.db.models import Avg
+# from django.conf import settings
+# from django.contrib.auth.models import User
+# from django.db.models import Avg
 
 COURSE_LEVELS = (
     ('UG', 'Under Graduate'),

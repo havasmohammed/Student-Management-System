@@ -61,6 +61,7 @@ class Academic_detailAdmin(admin.ModelAdmin):
                     'Fourth_year_percentage_of_marks',
                     'Total_percentage_of_marks',
                     'Class_awarded')
+    form = Miscellaneous_detailForm
 
     class Meta:
         model = Academic_detail
