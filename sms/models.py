@@ -8,6 +8,8 @@ from builtins import str
 COURSE_LEVELS = (
     ('UG', 'Under Graduate'),
     ('PG', 'Post Graduate'),
+    ('12th', '12th'),
+    ('10th', '10th'),
     )
 
 GENDER_CHOICES = (
@@ -119,7 +121,7 @@ class Course_detail(models.Model):
     duration = models.IntegerField(help_text='Duration of the course in years', default=2)
     level = models.CharField(max_length=4,
                              choices=COURSE_LEVELS,
-                             default='UG')
+                             default='10th')
 
     objects = models.Manager()
 
