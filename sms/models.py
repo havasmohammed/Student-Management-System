@@ -93,7 +93,7 @@ class Basic_detail(models.Model):
     father_name = models.CharField(max_length=200, default="")
     mother_name = models.CharField(max_length=200, default="")
     email = models.EmailField(max_length=100, default="")
-    blood_group = models.CharField(max_length=4, choices=BLOOD_GROUP_CHOICES,null=True, blank=True)
+    blood_group = models.CharField(max_length=4, choices=BLOOD_GROUP_CHOICES, null=True, blank=True)
     father_profession = models.CharField(max_length=100, null=True, blank=True)
     family_income = models.IntegerField(null=True, blank=True)
     religion = models.CharField(max_length=30,
@@ -110,7 +110,7 @@ class Basic_detail(models.Model):
         return '%s, %s %s' % (self.lastname, self.firstname, self.middlename)
     full_name = property(_get_full_name)
 
-    
+
 class Course_detail(models.Model):
     cname = models.CharField(max_length=50, unique=True)
     stream = models.CharField(max_length=50, default="")
@@ -123,7 +123,7 @@ class Course_detail(models.Model):
 
     objects = models.Manager()
 
-    
+
 class Academic_detail(models.Model):
     Attendence_percentage = models.DecimalField(max_digits=5,
                                                 decimal_places=2,
@@ -149,7 +149,7 @@ class Academic_detail(models.Model):
                                      choices=CLASS_AWARDED_LEVELS,
                                      null=True, blank=True)
 
-    
+
 class Miscellaneous_detail(models.Model):
     nss = models.BooleanField(blank=True)
     ncc = models.BooleanField(blank=True)
