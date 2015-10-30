@@ -1,7 +1,6 @@
 from django.db import models
 from builtins import str
 from django.contrib.auth.models import User
-# from managers import ProfileManager
 # from django.conf import settings
 # from django.contrib.auth.models import User
 # from django.db.models import Avg
@@ -49,7 +48,7 @@ CLASS_AWARDED_LEVELS = (
 
 class StudentProfile(models.Model):
     # Register Number, First Name and Last Name are defined in User model
-    user = models.ForeignKey(User, unique=True,)
+    user = models.OneToOneField(User, unique=True,)
 
     @property
     def institution_name(self):
