@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-from .forms import Login_pageForm, Basic_detailForm, Course_detailForm
+from .forms import LoginPageForm, BasicDetailForm, CourseDetailForm
 
 
 def index(request):
@@ -12,7 +12,7 @@ def index(request):
 def loginpage(request):
     title = "LOGIN PAGE "
     print request
-    form = Login_pageForm(request.POST)
+    form = LoginPageForm(request.POST)
     context = {
         "title": title,
         "form": form
@@ -26,7 +26,7 @@ def loginpage(request):
 def basicdetail(request):
     title = "BASIC DETAILS"
     print request
-    form = Basic_detailForm(request.POST)
+    form = BasicDetailForm(request.POST)
     context = {
         "title": title,
         "form": form
@@ -40,7 +40,7 @@ def basicdetail(request):
 def coursedetail(request):
     title = "COURSE DETAILS"
     print request
-    form = Course_detailForm(request.POST)
+    form = CourseDetailForm(request.POST)
     context = {
         "title": title,
         "form": form
