@@ -1,5 +1,6 @@
 from django.db import models
 from builtins import str
+from django.contrib.auth.models import User
 # from managers import ProfileManager
 # from django.conf import settings
 # from django.contrib.auth.models import User
@@ -46,7 +47,36 @@ CLASS_AWARDED_LEVELS = (
     )
 
 
-class Login_page(models.Model):
+class StudentProfile(models.Model):
+    # Register Number, First Name and Last Name are defined in User model
+    user = models.ForeignKey(User, unique=True,)
+
+    @property
+    def institution_name(self):
+        return self.user.institution_name
+
+    @property
+    def first_name(self):
+        return self.user.first_name
+
+    @property
+    def last_name(self):
+        return self.user.last_name
+
+    @property
+    def full_name(self):
+        return '%s %s' % (self.user.first_name, self.user.last_name)
+
+    @property
+    def register_number(self):
+        return self.user.username
+
+    @property
+    def last_login(self):
+        return self.user.last_login
+
+
+class LoginPage(models.Model):
     sid = models.IntegerField(primary_key=True)
     password = models.CharField(max_length=100)
 
@@ -81,7 +111,7 @@ class Login_page(models.Model):
         return str(self.sid)
 
 
-class Basic_detail(models.Model):
+class BasicDetail(models.Model):
     first_name = models.CharField(max_length=200)
     middle_name = models.CharField(max_length=200, default="")
     last_name = models.CharField(max_length=200)
@@ -113,7 +143,7 @@ class Basic_detail(models.Model):
     full_name = property(_get_full_name)
 
 
-class Course_detail(models.Model):
+class CourseDetail(models.Model):
     cname = models.CharField(max_length=50, unique=True)
     stream = models.CharField(max_length=50, default="")
     code = models.CharField(max_length=10, unique=True, help_text='Code of the stream', default="")
@@ -126,7 +156,7 @@ class Course_detail(models.Model):
     objects = models.Manager()
 
 
-class Academic_detail(models.Model):
+class AcademicDetail(models.Model):
     Attendence_percentage = models.DecimalField(max_digits=5,
                                                 decimal_places=2,
                                                 default=0)
@@ -152,7 +182,7 @@ class Academic_detail(models.Model):
                                      null=True, blank=True)
 
 
-class Miscellaneous_detail(models.Model):
+class MiscellaneousDetail(models.Model):
     nss = models.BooleanField(blank=True)
     ncc = models.BooleanField(blank=True)
     sports = models.CharField(max_length=100, null=True, blank=True)
