@@ -1,19 +1,19 @@
 from django.contrib import admin
 
-from .models import Basic_detail, Course_detail, Login_page, Academic_detail, Miscellaneous_detail
-from .forms import Basic_detailForm, Course_detailForm, Login_pageForm, Miscellaneous_detailForm, Academic_detailForm
+from .models import BasicDetail, CourseDetail, LoginPage, AcademicDetail, MiscellaneousDetail
+from .forms import BasicDetailForm, CourseDetailForm, LoginPageForm, MiscellaneousDetailForm, AcademicDetailForm
 
 
-class Login_pageAdmin(admin.ModelAdmin):
+class LoginPageAdmin(admin.ModelAdmin):
     list_display = ('sid', 'password')
-    form = Login_pageForm
+    form = LoginPageForm
 
     class Meta:
-        model = Login_page
-admin.site.register(Login_page, Login_pageAdmin)
+        model = LoginPage
+admin.site.register(LoginPage, LoginPageAdmin)
 
 
-class Basic_detailAdmin(admin.ModelAdmin):
+class BasicDetailAdmin(admin.ModelAdmin):
     list_display = ('first_name',
                     'middle_name',
                     'last_name',
@@ -31,28 +31,28 @@ class Basic_detailAdmin(admin.ModelAdmin):
                     'caste',
                     'reservation_category',
                     'emergency_contact_number')
-    form = Basic_detailForm
+    form = BasicDetailForm
 
     class Meta:
-        model = Basic_detail
-admin.site.register(Basic_detail, Basic_detailAdmin)
+        model = BasicDetail
+admin.site.register(BasicDetail, BasicDetailAdmin)
 
 
-class Course_detailAdmin(admin.ModelAdmin):
+class CourseDetailAdmin(admin.ModelAdmin):
     list_display = ('cname',
                     'stream',
                     'code',
                     'year_of_registration',
                     'duration',
                     'level')
-    form = Course_detailForm
+    form = CourseDetailForm
 
     class Meta:
-        model = Course_detail
-admin.site.register(Course_detail, Course_detailAdmin)
+        model = CourseDetail
+admin.site.register(CourseDetail, CourseDetailAdmin)
 
 
-class Academic_detailAdmin(admin.ModelAdmin):
+class AcademicDetailAdmin(admin.ModelAdmin):
     list_display = ('Attendence_percentage',
                     'cname',
                     'First_year_percentage_of_marks',
@@ -61,14 +61,14 @@ class Academic_detailAdmin(admin.ModelAdmin):
                     'Fourth_year_percentage_of_marks',
                     'Total_percentage_of_marks',
                     'Class_awarded')
-    form = Academic_detailForm
+    form = AcademicDetailForm
 
     class Meta:
-        model = Academic_detail
-admin.site.register(Academic_detail, Academic_detailAdmin)
+        model = AcademicDetail
+admin.site.register(AcademicDetail, AcademicDetailAdmin)
 
 
-class Miscellaneous_detailAdmin(admin.ModelAdmin):
+class MiscellaneousDetailAdmin(admin.ModelAdmin):
     list_display = ('nss',
                     'ncc',
                     'sports',
@@ -77,8 +77,8 @@ class Miscellaneous_detailAdmin(admin.ModelAdmin):
                     'orkut_profile_url',
                     'facebook_profile_url',
                     'linkedin_profile_url')
-    form = Miscellaneous_detailForm
+    form = MiscellaneousDetailForm
 
     class Meta:
-        model = Miscellaneous_detail
-admin.site.register(Miscellaneous_detail, Miscellaneous_detailAdmin)
+        model = MiscellaneousDetail
+admin.site.register(MiscellaneousDetail, MiscellaneousDetailAdmin)
