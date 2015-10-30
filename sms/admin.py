@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Basic_detail, Course_detail, Login_page, Academic_detail, Miscellaneous_detail
-from .forms import Basic_detailForm, Course_detailForm, Login_pageForm, Miscellaneous_detailForm
+from .forms import Basic_detailForm, Course_detailForm, Login_pageForm, Miscellaneous_detailForm, Academic_detailForm
 
 
 class Login_pageAdmin(admin.ModelAdmin):
@@ -61,7 +61,7 @@ class Academic_detailAdmin(admin.ModelAdmin):
                     'Fourth_year_percentage_of_marks',
                     'Total_percentage_of_marks',
                     'Class_awarded')
-    form = Miscellaneous_detailForm
+    form = Academic_detailForm
 
     class Meta:
         model = Academic_detail
@@ -77,6 +77,7 @@ class Miscellaneous_detailAdmin(admin.ModelAdmin):
                     'orkut_profile_url',
                     'facebook_profile_url',
                     'linkedin_profile_url')
+    form = Miscellaneous_detailForm
 
     class Meta:
         model = Miscellaneous_detail
