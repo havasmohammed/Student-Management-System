@@ -45,6 +45,30 @@ CLASS_AWARDED_LEVELS = (
     ('FAIL', 'FAIL'),
     )
 
+BRANCH_CHOICES = (
+    ('IT', 'IT'),
+    ('CSE', 'CSE'),
+    ('ECE', 'ECE'),
+    ('CE', 'CE'),
+    ('PE', 'PE'),
+    ('ME', 'ME'),
+    ('AE', 'AE'),
+    ('EE', 'EE'),
+    ('BT', 'BT'),
+    ('CHE', 'CHE')
+    )
+
+SEMESTER_CHOICES = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    )
+
 
 class StudentProfile(models.Model):
     # Register Number, First Name and Last Name are defined in User model
@@ -144,7 +168,8 @@ class BasicDetail(models.Model):
 
 class CourseDetail(models.Model):
     cname = models.CharField(max_length=50, unique=True)
-    stream = models.CharField(max_length=50, default="")
+    branch = models.CharField(max_length=20, choices=BRANCH_CHOICES, default="")
+    semester = models.CharField(max_length=5, choices=SEMESTER_CHOICES, default="")
     code = models.CharField(max_length=10, unique=True, help_text='Code of the stream', default="")
     year_of_registration = models.BigIntegerField()
     duration = models.IntegerField(help_text='Duration of the course in years', default=2)
