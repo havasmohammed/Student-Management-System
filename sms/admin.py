@@ -40,7 +40,8 @@ admin.site.register(BasicDetail, BasicDetailAdmin)
 
 class CourseDetailAdmin(admin.ModelAdmin):
     list_display = ('cname',
-                    'stream',
+                    'branch',
+                    'semester',
                     'code',
                     'year_of_registration',
                     'duration',
