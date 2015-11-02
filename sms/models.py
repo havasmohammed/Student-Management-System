@@ -156,27 +156,27 @@ class CourseDetail(models.Model):
 
 
 class AcademicDetail(models.Model):
-    Attendence_percentage = models.DecimalField(max_digits=5,
+    attendence_percentage = models.DecimalField(max_digits=5,
                                                 decimal_places=2,
                                                 default=0)
     cname = models.CharField(max_length=50, default=''),
-    First_year_percentage_of_marks = models.DecimalField(max_digits=5,
+    first_year_percentage_of_marks = models.DecimalField(max_digits=5,
                                                          decimal_places=2,
                                                          default=0)
-    Second_year_percentage_of_marks = models.DecimalField(max_digits=5,
+    second_year_percentage_of_marks = models.DecimalField(max_digits=5,
                                                           decimal_places=2,
                                                           default=0)
-    Third_year_percentage_of_marks = models.DecimalField(max_digits=5,
+    third_year_percentage_of_marks = models.DecimalField(max_digits=5,
                                                          decimal_places=2,
                                                          default=0)
-    Fourth_year_percentage_of_marks = models.DecimalField(max_digits=5,
+    fourth_year_percentage_of_marks = models.DecimalField(max_digits=5,
                                                           decimal_places=2,
                                                           default=0)
-    Total_percentage_of_marks = models.DecimalField(max_digits=5,
+    total_percentage_of_marks = models.DecimalField(max_digits=5,
                                                     decimal_places=2,
                                                     default=0)
     # Total_percentage_of_marks = .rating_set.aggregate(Avg('stars')).values()[0]
-    Class_awarded = models.CharField(max_length=50,
+    class_awarded = models.CharField(max_length=50,
                                      choices=CLASS_AWARDED_LEVELS,
                                      null=True, blank=True)
 
