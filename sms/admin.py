@@ -53,14 +53,14 @@ admin.site.register(CourseDetail, CourseDetailAdmin)
 
 
 class AcademicDetailAdmin(admin.ModelAdmin):
-    list_display = ('Attendence_percentage',
+    list_display = ('attendence_percentage',
                     'cname',
-                    'First_year_percentage_of_marks',
-                    'Second_year_percentage_of_marks',
-                    'Third_year_percentage_of_marks',
-                    'Fourth_year_percentage_of_marks',
-                    'Total_percentage_of_marks',
-                    'Class_awarded')
+                    'first_year_percentage_of_marks',
+                    'second_year_percentage_of_marks',
+                    'third_year_percentage_of_marks',
+                    'fourth_year_percentage_of_marks',
+                    'total_percentage_of_marks',
+                    'class_awarded')
     form = AcademicDetailForm
 
     class Meta:
