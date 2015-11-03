@@ -21,7 +21,9 @@ class BasicDetailForm(forms.ModelForm):
 class CourseDetailForm(forms.ModelForm):
     class Meta:
         model = CourseDetail
-        fields = ['cname', 'branch', 'semester', 'code', 'year_of_registration', 'duration', 'level']
+        fields = ['cname', 'branch', 'semester', 'code',
+                  'year_of_registration', 'duration', 'course_level',
+                  'session_fee', 'amount_paid']
 
 
 class AcademicDetailForm(forms.ModelForm):
