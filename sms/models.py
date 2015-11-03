@@ -1,8 +1,7 @@
 from django.db import models
-from builtins import str
+# from builtins import str
 from django.contrib.auth.models import User
 # from django.conf import settings
-# from django.contrib.auth.models import User
 # from django.db.models import Avg
 
 COURSE_LEVELS = (
@@ -71,7 +70,6 @@ SEMESTER_CHOICES = (
 
 
 class StudentProfile(models.Model):
-    # Register Number, First Name and Last Name are defined in User model
     user = models.OneToOneField(User, unique=True,)
 
     @property
@@ -146,6 +144,12 @@ class CourseDetail(models.Model):
     level = models.CharField(max_length=4,
                              choices=COURSE_LEVELS,
                              default='10th')
+    session_fee = models.IntegerField(blank=True, null=True)
+    amount_paid = models.IntegerField(default=0, blank=True, null=True)
+
+    def fee_status(self):
+        if not self.session_fee:
+            return ''
 
     objects = models.Manager()
 
