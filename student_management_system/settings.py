@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'grappelli',
+    'grappelli.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -90,6 +91,7 @@ STATIC_URL = '/static/'
 # AUTH_USER_MODEL = "sms.User"
 
 GRAPPELLI_ADMIN_TITLE = 'Student Management System'
+GRAPPELLI_INDEX_DASHBOARD = 'sms.dashboard.CustomIndexDashboard'
 
 WSGI_APPLICATION = 'student_management_system.wsgi.application'
 
