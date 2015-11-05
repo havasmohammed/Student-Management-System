@@ -21,4 +21,5 @@ urlpatterns = [
     # url(r'^', include('index.urls')),
     url(r'^sms/', include('sms.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'session_security/', include('session_security.urls')),
     ]
