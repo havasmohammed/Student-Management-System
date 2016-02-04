@@ -45,7 +45,9 @@ class CourseDetailAdmin(admin.ModelAdmin):
                     'code',
                     'year_of_registration',
                     'duration',
-                    'level')
+                    'course_level',
+                    'session_fee',
+                    'amount_paid')
     form = CourseDetailForm
 
     class Meta:
@@ -56,12 +58,18 @@ admin.site.register(CourseDetail, CourseDetailAdmin)
 class AcademicDetailAdmin(admin.ModelAdmin):
     list_display = ('attendence_percentage',
                     'cname',
+                    'tenth_passed_out_year',
+                    'tenth_percentage',
+                    'hsc_passed_out_year',
+                    'hsc_percentage',
+                    'hsc_major',
                     'first_year_percentage_of_marks',
                     'second_year_percentage_of_marks',
                     'third_year_percentage_of_marks',
                     'fourth_year_percentage_of_marks',
                     'total_percentage_of_marks',
-                    'class_awarded')
+                    'class_awarded',
+                    'history_of_arrears')
     form = AcademicDetailForm
 
     class Meta:
